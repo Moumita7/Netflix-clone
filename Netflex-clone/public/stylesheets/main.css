@@ -1,0 +1,367 @@
+/* Importing font from storage which is used for custom icons on the webpage */
+@font-face {
+  font-family: "newfont";
+  src: url("./nf-icon-v1-93.woff");
+}
+@font-face {
+  font-family: "netflixSansRg";
+  src: url("../assets/fonts/NetflixSansRg.woff2");
+}
+/* Setting global css and background image */
+body {
+  font-family: "netflixSansRg", Helvetica, Arial, sans-serif;
+  background: url("../assets/images/background_large.jpg");
+  background-size: cover;
+  height: auto;
+  font-size: 16px;
+  color: #333;
+}
+
+button,
+input {
+  font: inherit;
+}
+/* For dark overlay on top of background image */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  /* z-index is set to -1 for showing this to back */
+  z-index: -1;
+}
+.container {
+  max-width: 100%;
+}
+/* header covers all the width but is only 90px tall and is positioned to be at the top of the page */
+header {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* for vertical alignment of netflix logo */
+  align-items: center;
+}
+/* netflix logo size and color */
+svg {
+  height: 45px;
+  width: 167px;
+  margin-left: 46px;
+  fill: #e50914;
+}
+/* form div which is the parent container of form */
+.form {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 68px 40px;
+}
+form {
+  height: 344px;
+}
+/* login body is the black container which contains forms */
+.login-body {
+  content: "";
+  height: 91px;
+  display: block;
+  max-width: 450px;
+  min-height: 660px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
+/* h1 sign in text*/
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 28px;
+}
+/* form element div */
+.form-element {
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 16px;
+}
+/* Input element */
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  padding: 16px 20px 0 20px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #ffffff;
+}
+/* for removing the outline which is applied by browser when focused */
+input[type="text"]:focus {
+  outline: none;
+}
+/* Label which stays on top of the input */
+.floating-label {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 20px;
+  font-size: 18px;
+  font-weight: 100;
+  cursor: text;
+  color: #8c8c8c;
+  transition: all 100ms;
+}
+/* Label which shrinks and moves to the top of input when the input is focused and has text inside it  */
+input[type="text"]:focus ~ .floating-label,
+input[type="text"]:valid ~ .floating-label {
+  font-size: 11px;
+  top: 7px;
+  transition: all 100ms;
+}
+/* sign in button */
+.btn {
+  width: 100%;
+  height: 48px;
+  margin: 24px 0 12px;
+  cursor: pointer;
+  padding: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background-color: #e50914;
+}
+/* options div contains remember me checkbox and help link, flex is used to set then in single row and on seperate ends */
+.options {
+  display: flex;
+  justify-content: space-between;
+  color: #b3b3b3;
+  font-size: 13px;
+  font-weight: 500;
+  height: 17px;
+}
+.content {
+  display: flex;
+}
+/* label for remember me checkbox */
+.remember-label {
+  align-self: center;
+  display: block;
+}
+/* hiding the default checkbox */
+.content input {
+  display: none;
+}
+/* setting up custom checkmark */
+.content .checkmark {
+  width: 16px;
+  height: 16px;
+  background-color: #8c8c8c;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+/* for hiding check sign when unchecked */
+.checkmark:after {
+  content: "";
+  display: none;
+}
+/* changing background color of custom checkmark when checked */
+.content input:checked ~ .checkmark {
+  background-color: #8c8c8c;
+}
+/* showing the custom checkmark when input is checked */
+.content input:checked ~ .checkmark:after {
+  display: block;
+}
+/* custom checkmark css */
+.content .checkmark:after {
+  /* setting custom font for checkmark */
+  font-family: "newFont";
+  /* code of checkmark which is used by netflix */
+  content: "\e804";
+  color: black;
+  font-size: 16px;
+}
+/* setting up need help link */
+.options a {
+  color: inherit;
+  padding-top: 2px;
+  text-decoration: none;
+  align-self: center;
+}
+.options a:hover {
+  text-decoration: underline;
+}
+/* second half of login form */
+.container-2 {
+  width: 100%;
+  display: flex;
+}
+/* facebook link */
+.fb-option a {
+  margin-top: 16px;
+  display: flex;
+  font-size: 13px;
+  color: rgb(115, 115, 115);
+  text-decoration: none;
+  align-items: center;
+}
+/* fb logo */
+.fb-option img {
+  width: 20px;
+  margin-right: 10px;
+}
+/* link to sign-up/homepage */
+.signup-link {
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(115, 115, 115);
+}
+.signup-link a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.signup-link a:hover {
+  text-decoration: underline;
+}
+/* recaptcha text styling */
+.captcha .captcha-info {
+  margin: 13px 0;
+  font-size: 13px;
+  color: rgb(115, 115, 115);
+}
+.captcha-info a {
+  color: rgb(0, 113, 235);
+  text-decoration: none;
+}
+/* hidded class to hide unwanted elements on the page */
+.hidden {
+  display: none;
+}
+.captcha-info a:hover {
+  text-decoration: underline;
+}
+/* recaptcha text styling, this is hidden by default and will only be displayed when clicked learn more */
+#recaptcha-text {
+  font-size: 13px;
+  color: rgb(115, 115, 115);
+}
+#recaptcha-text a {
+  color: rgb(0, 113, 235);
+  text-decoration: none;
+}
+#recaptcha-text a:hover {
+  text-decoration: underline;
+}
+/* footer of the page */
+footer {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 90px;
+}
+/* main container of content in footer */
+footer .site-footer {
+  max-width: 1000px;
+  height: 238px;
+  padding: 30px 0;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #8c8c8c;
+}
+/* footer-top for contact link */
+.footer-top {
+  margin: 0 0 30px;
+}
+/* footer-link is for information links */
+.footer-link {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+}
+/* styling each li */
+.footer-link li {
+  min-width: 100px;
+  vertical-align: top;
+  display: inline-block;
+  width: 23%;
+  font-size: 13px;
+  margin-bottom: 16px;
+  padding-right: 12px;
+}
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+/* div for language selector */
+.language-selector {
+  margin-top: 20px;
+}
+/* styling the select tag */
+.language-selector select {
+  width: 121px;
+  height: 48px;
+  background-color: black;
+  color: #8c8c8c;
+  padding-left: 15px;
+}
+
+/* media query for responsive page. this css will only apply when the screen is zoomed out. Footer will stick to the bottom of the page when the screen has enough space */
+@media screen and (min-width: 2144px), (min-height: 1100px) {
+  footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+/* media query for switching to the mobile view when screen width is 740px */
+@media screen and (max-width: 740px) {
+  /* will make the background black */
+  header {
+    background-color: #000000;
+  }
+  svg {
+    margin-left: 20px;
+  }
+  .login-body {
+    width: 100%;
+    margin: 0;
+    max-width: 100%;
+    background-color: #000000;
+  }
+  .form {
+    padding: 0 5%;
+  }
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-divider {
+    height: 0;
+    width: 100%;
+    border-top: 0.5px solid #e5e5e5;
+  }
+  footer {
+    margin-top: 0;
+    background-color: #000000;
+  }
+  .site-footer {
+    width: 90%;
+  }
+}

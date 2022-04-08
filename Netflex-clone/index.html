@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix</title>
+    <!-- Netflix icon in title  -->
+    <link rel="shortcut icon" href="./public/assets/images/title_icon.ico" />
+    <!-- linking  Reset.css stylesheet -->
+    <link rel="stylesheet" href="public/stylesheets/reset.css" />
+    <!-- Linking main stylesheet -->
+    <link rel="stylesheet" href="public/stylesheets/main.css" />
+  </head>
+  <body>
+    <!-- Background div for applying background image to the entire page -->
+    <div class="background"></div>
+    <!-- Main container which contains all the html code of the page -->
+    <div class="container">
+      <!-- Header which includes Netflix svg logo -->
+      <header>
+        <a href="./home.html"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111 30">
+            <path
+              d="M105.062 14.28 111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h5.124l-5.937 14.28zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343V0zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.688.062 5.375.28 7.969.405v4.657zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97h6.406zm-18.906-5.97V26.25c-1.563 0-3.156 0-4.688.062V4.687h-4.844V0h14.406v4.687h-4.874zM30.75 15.593c-2.062 0-4.5 0-6.25.095v6.968c2.75-.188 5.5-.406 8.281-.5v4.5l-12.968 1.032V0H32.78v4.687H24.5V11c1.813 0 4.594-.094 6.25-.094v4.688zM4.78 12.968v16.375A104.74 104.74 0 0 0 0 30V0h4.469l6.093 17.032V0h4.688v28.062c-1.656.282-3.344.376-5.125.625L4.78 12.968z"
+            /></svg
+        ></a>
+      </header>
+      <!-- container div which contains the login form body -->
+      <div class="login-body">
+        <!-- This div form contains input tags, sign-in button and checkbox with help link -->
+        <div class="form">
+          <form action="">
+            <h1>Sign In</h1>
+            <!-- Input element with floating label -->
+            <div class="form-element">
+              <input type="text" name="username" id="username" required />
+              <label class="floating-label" for="username"
+                >Email or Phone Number</label
+              >
+            </div>
+            <div class="form-element">
+              <input type="text" name="password" id="password" required />
+              <label class="floating-label" for="password">Password</label>
+            </div>
+            <button class="btn">Sign In</button>
+            <!-- div for remember me checkbox and help link -->
+            <div class="options">
+              <label for="remember" class="content">
+                <input
+                  class="checkbox-original"
+                  type="checkbox"
+                  name="remember"
+                  id="remember"
+                />
+                <!-- span for custom checkmark -->
+                <span class="checkmark"></span>
+                <label class="remember-label" for="remember">Remember Me</label>
+              </label>
+              <div>
+                <a href="#">Need Help?</a>
+              </div>
+            </div>
+          </form>
+          <!-- second container div body inside of login body which contains second part of login form -->
+          <div class="container-2">
+            <div class="info-body">
+              <!-- link for facebook login option -->
+              <div class="fb-option">
+                <a href=""
+                  ><img
+                    src="./public/assets/images/fb_logo.png"
+                    alt="facebook"
+                  /><span class="fb-label">Login with Facebook</span></a
+                >
+              </div>
+              <!-- Link for going to the homepage for signing up -->
+              <div class="signup-link">
+                New to Netflix? <a href="./home.html">Sign up now</a>.
+              </div>
+              <!-- recaptch information with collapsable text -->
+              <div class="captcha">
+                <p class="captcha-info">
+                  This page is protected by Google reCAPTCHA to ensure you're
+                  not a bot. <a id="learn" href="#">Learn More.</a>
+                </p>
+                <!-- Collapsable recaptcha text which is hidden but will be displayed after clicking learn more -->
+                <div>
+                  <span
+                    id="recaptcha-text"
+                    class="hidden"
+                    data-uia="recaptcha-disclosure-text"
+                    >The information collected by Google reCAPTCHA is subject to
+                    the Google
+                    <a
+                      href="https://policies.google.com/privacy"
+                      id="recaptcha-privacy-link"
+                      data-uia="recaptcha-privacy-link"
+                      target="_blank"
+                      >Privacy Policy</a
+                    >
+                    and
+                    <a
+                      href="https://policies.google.com/terms"
+                      id="recaptcha-tos-link"
+                      data-uia="recaptcha-tos-link"
+                      target="_blank"
+                      >Terms of Service</a
+                    >, and is used for providing, maintaining, and improving the
+                    reCAPTCHA service and for general security purposes (it is
+                    not used for personalised advertising by Google).</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer which contains contact, links and language option-->
+    <footer>
+      <!-- footer divider is shown only in mobile mode -->
+      <div class="footer-divider"></div>
+      <!-- site footer is the main container for all the content to be shown on footer -->
+      <div class="site-footer">
+        <!-- contact option with link to telephone number -->
+        <p class="footer-top">
+          Questions? Call <a href="tel:000-800-040-1843">000-800-040-1843</a>
+        </p>
+        <!-- List of all the help links -->
+        <ul class="footer-link">
+          <li><a class="footer-link-item" href="">FAQ</a></li>
+          <li><a class="footer-link-item" href="">Help Center</a></li>
+          <li><a class="footer-link-item" href="">Terms of Use</a></li>
+          <li><a class="footer-link-item" href="">Privacy</a></li>
+          <li><a class="footer-link-item" href="">Cookies Preferance</a></li>
+          <li><a class="footer-link-item" href="">Corporate Information</a></li>
+        </ul>
+        <!-- Language selector which is incomplete as it doesn't have custom icon -->
+        <div class="language-selector">
+          <span id="lang-icon"></span>
+          <select name="language" id="">
+            <option value="English">English</option>
+            <option value="Hindi">हिन्दी</option>
+          </select>
+        </div>
+      </div>
+    </footer>
+    <!-- Linking javascript for the page -->
+    <script src="public/scripts/index.js"></script>
+  </body>
+</html>

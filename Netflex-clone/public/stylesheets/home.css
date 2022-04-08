@@ -1,0 +1,465 @@
+@font-face {
+  font-family: "netflixSansMd";
+  src: url("../assets/fonts/NetflixSansRg.woff2");
+}
+body {
+  font-family: "netflixSansMd", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  overflow-x: hidden;
+}
+.signup {
+  width: 100%;
+  height: 800px;
+  background: black;
+  overflow: hidden;
+}
+
+.signup img {
+  object-fit: cover;
+  opacity: 0.4;
+  width: 100vw;
+  height: 100%;
+}
+/* header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* for vertical alignment of netflix logo */
+  align-items: center;
+}
+/* Netflix svg logo  */
+svg {
+  height: 45px;
+  width: 167px;
+  margin-left: 56px;
+  fill: #e50914;
+}
+/* styling select menu */
+select {
+  width: 94px;
+  height: 36px;
+  margin-right: 32px;
+  background-color: black;
+  color: #8c8c8c;
+  padding-left: 15px;
+  border: 1px solid white;
+}
+form {
+  width: 100%;
+  box-sizing: border-box;
+}
+/* sign in button */
+.btn {
+  padding: 7px 17px;
+  background-color: #e50914;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  margin-right: 56px;
+}
+.sign-up-form {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  padding: 75px 45px;
+  left: 0;
+  top: 90px;
+  width: 100%;
+}
+.signup .sign-up-form .card {
+  width: 100%;
+  padding: 75px 0;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+.signup .sign-up-form h1 {
+  font-size: 4em;
+  font-weight: 700;
+  color: white;
+  margin: 0 75px;
+}
+.signup .sign-up-form h2 {
+  font-size: 1.625em;
+  color: white;
+  margin: 16px 75px;
+}
+.signup .sign-up-form h3 {
+  font-size: 1.2em;
+  color: white;
+  padding: 0 5%;
+  padding-bottom: 20px;
+}
+.email {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+/* form element div */
+.form-element {
+  position: relative;
+  padding-bottom: 16px;
+  width: 55%;
+}
+
+/* Input element */
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  padding: 10px;
+  padding-bottom: 0;
+  height: 70px;
+  font-size: 18px;
+  border: 1px solid rgb(140, 140, 140);
+  background-color: #ffffff;
+  color: black;
+}
+/* for removing the outline which is applied by browser when focused */
+input[type="text"]:focus {
+  outline: none;
+}
+/* Label which stays on top of the input */
+.floating-label {
+  box-sizing: border-box;
+  position: absolute;
+  top: 30%;
+  left: 20px;
+  font-size: 18px;
+  font-weight: 100;
+  cursor: text;
+  color: #8c8c8c;
+  transition: all 100ms;
+}
+/* Label which shrinks and moves to the top of input when the input is focused and has text inside it  */
+input[type="text"]:focus ~ .floating-label,
+input[type="text"]:valid ~ .floating-label {
+  font-size: 14px;
+  font-weight: 700;
+  top: 7px;
+  left: 10px;
+  transition: all 100ms;
+}
+
+#start {
+  width: 25%;
+  height: 70px;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-size: 1.625rem;
+  cursor: pointer;
+}
+#start:hover {
+  background-color: #ff1b27;
+}
+
+/* Data card */
+.data {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 45px;
+  background-color: black;
+  border-top: 7px solid rgb(50, 50, 50);
+  border-bottom: 7px solid rgb(50, 50, 50);
+}
+hr {
+  margin-left: -45px;
+  margin-right: -45px;
+  border: none;
+  border-top: 7px solid rgb(50, 50, 50);
+}
+.data .content {
+  width: 70%;
+  box-sizing: border-box;
+  display: flex;
+  margin: 70px auto;
+  align-items: center;
+}
+.content:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+.info-card {
+  width: 50%;
+  padding-right: 3rem;
+}
+.info-card h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.info-card h2 {
+  color: white;
+  font-size: 1.625rem;
+  margin: 0.75em 0 0.25em;
+}
+.video-card {
+  width: 50%;
+  box-sizing: border-box;
+  position: relative;
+}
+.video-card img {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+  max-width: 100%;
+  max-height: 100%;
+}
+.video-card video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 73%;
+  max-height: 54%;
+  z-index: 4;
+  top: 47%;
+  left: 49.5%;
+  transform: translate(-50%, -50%);
+}
+#second-video {
+  max-width: 63%;
+  max-height: 47%;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.download {
+  display: flex;
+  z-index: 7;
+  position: absolute;
+  flex-direction: row;
+  padding: 8px 12px;
+  width: 60%;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 84px;
+  background-color: black;
+  border-radius: 0.75em;
+  border: 2px solid #303030;
+}
+.download img {
+  box-sizing: border-box;
+  margin-right: 16px;
+  flex: 2;
+}
+.label-img {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3em 0;
+  justify-content: center;
+  flex: 8;
+}
+.label-img .head-ing {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+.label-img .downloading {
+  font-size: 14.4px;
+  color: #0071eb;
+}
+#gif {
+  flex: 1;
+  margin: 0;
+  width: 48px;
+  height: 48px;
+  align-self: center;
+}
+.faq-container {
+  padding: 70px 45px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-bottom: 7px solid rgb(50, 50, 50);
+}
+.faq-container h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.faq {
+  width: 45%;
+  margin: 2em auto;
+}
+.ques-container {
+  position: relative;
+  margin-bottom: 8px;
+  background-color: #303030;
+  text-align: left;
+  position: relative;
+  width: 100%;
+  font-size: 26px;
+  cursor: pointer;
+}
+.question {
+  padding: 0.8em 2.2em 0.8em 1.2em;
+  margin-bottom: 1px;
+  border-bottom: 1px solid black;
+}
+.ques-container svg {
+  fill: white;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  margin: 0;
+  top: 25px;
+  right: 25px;
+  transform: rotate(-45deg);
+}
+.ques-container P {
+  padding: 30px;
+  line-height: 1.25em;
+}
+.ques-container p {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.faq-container form {
+  margin-top: 4em;
+}
+.faq-container .form-element {
+  width: 65%;
+}
+.faq-container form h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* footer of the page */
+footer {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 40px;
+  background-color: #000000;
+}
+/* main container of content in footer */
+footer .site-footer {
+  max-width: 1000px;
+  padding: 30px 0;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #8c8c8c;
+}
+/* footer-top for contact link */
+.footer-top {
+  margin: 0 0 30px;
+}
+/* footer-link is for information links */
+.footer-link {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+}
+/* styling each li */
+.footer-link li {
+  min-width: 100px;
+  vertical-align: top;
+  display: flex;
+  width: 25%;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+/* div for language selector */
+.language-selector {
+  margin-top: 20px;
+}
+/* styling the select tag */
+.language-selector select {
+  width: 121px;
+  height: 48px;
+  background-color: black;
+  color: #8c8c8c;
+  padding-left: 15px;
+}
+.site-footer #net-ind {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+  .data .content {
+    width: 100%;
+  }
+  .faq {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 10px;
+  }
+  #start {
+    font-size: 16px;
+    height: 40px;
+  }
+  .email {
+    flex-direction: column;
+    align-items: center;
+  }
+  .email .form-element {
+    width: 100%;
+  }
+  .email .form-element input {
+    height: 48px;
+  }
+  .form-element .floating-label {
+    top: 20%;
+  }
+  .form-element input:valid ~ .floating-label,
+  .form-element input:focus ~ .floating-label {
+    top: 3px;
+    font-weight: 400;
+  }
+  .form-element {
+    flex: 9;
+  }
+  .signup .sign-up-form h1 {
+    margin: 0;
+  }
+  .faq {
+    width: 100%;
+  }
+  .signup .sign-up-form h2 {
+    margin: 16px 0;
+  }
+  .data {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .content:nth-of-type(1n) {
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+  }
+  .info-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .video-card {
+    width: 100%;
+  }
+}
